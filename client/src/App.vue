@@ -26,7 +26,7 @@ export default {
   &__views {
     // border: 2px solid $primary-red;
     margin: 0 auto;
-    max-width: 960px;
+    max-width: 860px;
   }
 }
 </style>
