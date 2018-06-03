@@ -53,6 +53,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../scss/variables';
+
 .svg {
   border: 1px solid black;
   border-radius: 50%;
@@ -68,9 +70,9 @@ export default {
 }
 
 .active {
-  border-color: #900;
+  background-color: $primary-red;
   & > line {
-    stroke: #900;
+    stroke: #fff;
   }
 }
 </style>
