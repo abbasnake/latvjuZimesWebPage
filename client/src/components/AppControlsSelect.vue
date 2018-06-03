@@ -1,14 +1,15 @@
 <template>
   <div class="container">
     <template v-if="isSmallScreen">
-      <select name="" id="" @change="onChange">
+      <select class="container__select" @change="onChange">
         <option
         v-for="(key, index) in simbolKeys"
         :value="key"
         :key="index"
         >
-         {{key}}
+         {{ simbols[key].name }}
         </option>
+        <option :value="currentSimbolName" selected>{{ currentSimbolName }}</option>
       </select>
     </template>
     <template v-else>
@@ -35,6 +36,7 @@ export default {
     }
   },
   mounted () {
+    this.checkScreenSize()
     this.resizeListener()
   },
   computed: {
@@ -43,6 +45,9 @@ export default {
     },
     currentSimbolName () {
       return this.$store.getters.currentSimbolName
+    },
+    simbols () {
+      return this.$store.getters.simbols
     }
   },
   methods: {
@@ -67,15 +72,15 @@ export default {
 .container {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(11, 1fr);
   justify-items: center;
-  // width: 100%;
-  // overflow: scroll;
-  // padding: 5px;
+  &__select {
+  }
 }
 
-@media (min-width: 450px) {
+@media (min-width: 400px) {
   .container {
+    grid-template-columns: repeat(11, 1fr);
+    justify-items: center;
     grid-template-columns: repeat(11, 1fr);
   }
 }

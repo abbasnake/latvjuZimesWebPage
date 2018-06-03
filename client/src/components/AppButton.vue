@@ -21,6 +21,7 @@ export default {
     border: 2px solid black;
     border-radius: 20px;
     transition: all .2s linear;
+    padding: 5px;
     &:focus {
         outline: none;
     }
