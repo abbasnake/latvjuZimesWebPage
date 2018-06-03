@@ -31,9 +31,11 @@ export default {
 .controls {
   display: grid;
   grid-template-areas:
-    "select    select       select"
-    "buttons   buttons      buttons"
-    "bgSliders colorSliders otherSliders";
+    "select"
+    "buttons"
+    "bgSliders"
+    "colorSliders"
+    "otherSliders";
   grid-gap: 5px;
   &__select {
     grid-area: select;
@@ -49,6 +51,15 @@ export default {
   }
   &__otherSliders {
     grid-area: otherSliders;
+  }
+}
+
+@media (min-width: 400px) {
+  .controls {
+    grid-template-areas:
+    "select select select"
+    "buttons buttons buttons"
+    "bgSliders colorSliders otherSliders";
   }
 }
 </style>
