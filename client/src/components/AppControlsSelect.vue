@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <template v-if="true">
+    <template v-if="isSmallScreen">
       <select name="" id="" @change="onChange">
         <option
         v-for="(key, index) in simbolKeys"
@@ -29,6 +29,14 @@ export default {
   components: {
     'app-icon': AppIcon
   },
+  data () {
+    return {
+      isSmallScreen: true
+    }
+  },
+  mounted () {
+    this.resizeListener()
+  },
   computed: {
     simbolKeys () {
       return this.$store.getters.simbolKeys
@@ -40,6 +48,16 @@ export default {
   methods: {
     onChange (e) {
       this.$store.dispatch('changeSimbol', e.target.value)
+    },
+    checkScreenSize () {
+      if (window.innerWidth > 400) {
+        this.isSmallScreen = false
+      } else {
+        this.isSmallScreen = true
+      }
+    },
+    resizeListener () {
+      window.addEventListener('resize', this.checkScreenSize)
     }
   }
 }
