@@ -59,6 +59,7 @@ export default {
   background-color: white;
   transition: all .2s linear;
   max-width: 35px;
+  cursor: pointer;
   width: 100%;
   &:hover, &:hover > line {
     background-color: black;
