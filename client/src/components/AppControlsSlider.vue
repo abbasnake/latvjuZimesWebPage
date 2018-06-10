@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <label class="container__label" :for="sliderName">
-      {{ sliderLabel }} {{ sliderValue }}
+      {{ sliderLabel }} <strong>{{ sliderValue }}</strong>
     </label>
     <input
       class="container__input"
@@ -43,13 +43,34 @@ export default {
 <style lang="scss" scoped>
 .container {
   display: grid;
+  grid-template-areas:
+    "input label";
+  grid-template-columns: 1fr 1fr;
   padding: 5px;
+
   &__input {
+    grid-area: input;
     margin: 0 auto;
     width: 90%;
   }
   &__label {
+    grid-area: label;
     text-align: center;
+  }
+}
+
+@media (min-width: 400px) {
+  .container {
+    grid-template-areas:
+      "label"
+      "input";
+    grid-template-columns: 1fr;
+    &__input {
+
+    }
+    &__label {
+      text-align: center;
+    }
   }
 }
 </style>

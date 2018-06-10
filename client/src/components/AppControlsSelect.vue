@@ -55,7 +55,7 @@ export default {
       this.$store.dispatch('changeSimbol', e.target.value)
     },
     checkScreenSize () {
-      if (window.innerWidth > 400) {
+      if (window.innerWidth >= 400) {
         this.isSmallScreen = false
       } else {
         this.isSmallScreen = true
