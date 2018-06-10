@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import simbols from './simbols'
-import { repeatArray, getSimbolKeys, sliderRandomizeArray } from './helpers'
+import {
+  repeatArray,
+  getSimbolKeys,
+  sliderRandomizeArray
+} from './helpers'
 
 Vue.use(Vuex)
 
