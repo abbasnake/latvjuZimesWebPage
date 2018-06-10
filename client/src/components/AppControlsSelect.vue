@@ -6,10 +6,10 @@
         v-for="(key, index) in simbolKeys"
         :value="key"
         :key="index"
+        :selected="isCurrentlySelectedSimbol(key)"
         >
          {{ simbols[key].name }}
         </option>
-        <option :value="currentSimbolName" selected>{{ currentSimbolName }}</option>
       </select>
     </template>
     <template v-else>
@@ -48,6 +48,9 @@ export default {
     },
     simbols () {
       return this.$store.getters.simbols
+    },
+    currentSimbolKey () {
+      return this.$store.getters.currentSimbolKey
     }
   },
   methods: {
@@ -63,6 +66,9 @@ export default {
     },
     resizeListener () {
       window.addEventListener('resize', this.checkScreenSize)
+    },
+    isCurrentlySelectedSimbol (key) {
+      return this.currentSimbolKey === key
     }
   }
 }
