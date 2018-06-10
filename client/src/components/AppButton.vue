@@ -2,8 +2,8 @@
   <button class="button" @click="onClick">
       <slot></slot>
       <template v-if="isToggle">
-        <strong v-if="isOn">ON</strong>
-        <strong v-else>OFF</strong>
+        <strong class="button__toggle" v-if="isOn">ON</strong>
+        <strong class="button__toggle" v-else>OFF</strong>
       </template>
   </button>
 </template>
@@ -40,6 +40,9 @@ export default {
     &:active {
         border: 5px;
         transform: translateY(2px);
+    }
+    &__toggle {
+      color: inherit;
     }
 }
 </style>
