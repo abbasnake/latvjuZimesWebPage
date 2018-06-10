@@ -1,7 +1,5 @@
-- make GitHub
 - key shortcuts
 - tooltip
-- add value numbers next to sliders for reference
 - decide on layout for each screen size
 - canvas ratio
 - export svg (maybe just the file with coordinates to be put in some other program and right click save as for reference)
@@ -10,7 +8,4 @@
 - make gallery (the about and info page later I guess)
 - style the shit out of the sliders
 - organize the store better (function names, getter names etc)
-- crandomize colors button indication when it is pressed
-- make buttons in one component
-- add reset or info button
 - maybe circular simbol selector small screen setting is a slider on one line instead of forming 2 rows (maybe select name and the simbol appears next to it)
