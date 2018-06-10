@@ -1,8 +1,25 @@
 <template>
   <div class="container">
-    <app-button class="container__colors" @clicked="randomizeColors">Randomize Colors</app-button>
-    <app-button class="container__refresh" @clicked="refresh">Refresh Settings</app-button>
-    <app-button class="container__randomize" @clicked="randomize">Randomize Settings</app-button>
+    <app-button
+      class="container__colors"
+      @clicked="randomizeColors"
+      :is-toggle="true"
+      :isOn="isRandomizeColors"
+    >
+      Randomize Colors
+    </app-button>
+    <app-button
+      class="container__refresh"
+      @clicked="refresh"
+    >
+      Refresh Settings
+    </app-button>
+    <app-button
+      class="container__randomize"
+      @clicked="randomize"
+    >
+      Randomize Settings
+    </app-button>
   </div>
 </template>
 
@@ -13,6 +30,11 @@ export default {
   name: 'AppControlsButtons',
   components: {
     'app-button': AppButton
+  },
+  computed: {
+    isRandomizeColors () {
+      return this.$store.getters.isRandomizeColors
+    }
   },
   methods: {
     randomizeColors () {

@@ -1,6 +1,10 @@
 <template>
   <button class="button" @click="onClick">
       <slot></slot>
+      <template v-if="isToggle">
+        <strong v-if="isOn">ON</strong>
+        <strong v-else>OFF</strong>
+      </template>
   </button>
 </template>
 
@@ -8,6 +12,10 @@
 
 export default {
   name: 'AppButton',
+  props: {
+    isToggle: {type: Boolean, default: false},
+    isOn: {type: Boolean, default: true}
+  },
   methods: {
     onClick () {
       this.$emit('clicked')
