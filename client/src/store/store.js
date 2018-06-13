@@ -69,7 +69,7 @@ export default new Vuex.Store({
     randomizeSliders (context) {
       sliderRandomizeArray.forEach(async slider => {
         const newValue = Math.floor(Math.random() * slider.maxValue)
-        let currentValue = context.state[slider.name]
+        let currentValue = parseInt(context.state[slider.name])
         const difference = newValue - currentValue
         const increments = 4
         const addBy = difference / increments
