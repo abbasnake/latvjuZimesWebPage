@@ -10,3 +10,5 @@
 - maybe circular simbol selector small screen setting is a slider on one line instead of forming 2 rows (maybe select name and the simbol appears next to it)
 - save settings for later use
 - when right click download, the image background is transparent
+- animate from one setting to next
+- add fractal lvels to simbols (wont work for all of them)
