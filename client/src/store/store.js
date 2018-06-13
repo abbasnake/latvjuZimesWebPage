@@ -67,11 +67,21 @@ export default new Vuex.Store({
       context.commit('changeSlider', payload)
     },
     randomizeSliders (context) {
-      sliderRandomizeArray.forEach(slider => {
-        context.commit('changeSlider', {
-          name: slider.name,
-          value: Math.floor(Math.random() * slider.maxValue)
-        })
+      sliderRandomizeArray.forEach(async slider => {
+        const newValue = Math.floor(Math.random() * slider.maxValue)
+        let tempOldValue = context.state[slider.name]
+        const difference = newValue - tempOldValue
+        const increments = 4
+        const addBy = difference / increments
+
+        for (let i = 0; i <= increments; i++) {
+          tempOldValue += addBy
+          await new Promise(resolve => setTimeout(resolve, 10))
+          context.commit('changeSlider', {
+            name: slider.name,
+            value: Math.floor(tempOldValue)
+          })
+        }
       })
     }
   }

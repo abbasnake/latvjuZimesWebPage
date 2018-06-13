@@ -35,9 +35,6 @@ export default {
       return this.returnBgColor()
     }
   },
-  mounted () {
-    console.log(this.sliderName)
-  },
   methods: {
     onChange (e) {
       this.$store.dispatch('changeSlider', {
@@ -59,6 +56,9 @@ export default {
         default:
           return {'background-color': '#740D09'}
       }
+    },
+    floorValue (val) {
+      return Math.floor(val)
     }
   }
 }
