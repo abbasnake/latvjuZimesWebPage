@@ -71,13 +71,13 @@ export default new Vuex.Store({
         const newValue = Math.floor(Math.random() * slider.maxValue)
         let currentValue = parseInt(context.state[slider.name])
         const difference = newValue - currentValue
-        const increments = 4
+        const increments = 10
         const addBy = difference / increments
 
         for (let i = 0; i < increments; i++) {
           currentValue += addBy
-          await new Promise(resolve => setTimeout(resolve, 10))
-          context.commit('changeSlider', {
+          await new Promise(resolve => setTimeout(resolve, 50))
+          await context.commit('changeSlider', {
             name: slider.name,
             value: Math.floor(currentValue)
           })
