@@ -12,3 +12,4 @@
 - when right click download, the image background is transparent
 - animate from one setting to next
 - add fractal lvels to simbols (wont work for all of them)
+- info popup
