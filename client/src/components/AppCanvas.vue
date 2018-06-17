@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="container">
     <canvas
-      class="canvas"
+      class="container__canvas"
       ref="canvas"
       :style="canvasBackgroundColor"
       :height="canvasHeight"
       :width="canvasWidth"
     >
     </canvas>
-    <h2 class="name" :style="titleColor">{{ currentSimbolName }}</h2>
+    <h2 class="container__name" :style="titleColor">{{ currentSimbolName }}</h2>
   </div>
 </template>
 
@@ -139,18 +139,40 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.canvas {
-  border: 1px solid red;
-  border-radius: 3px;
+.container {
   margin: 0 auto;
-  width: 100%;
+  &__canvas {
+    border: 1px solid red;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  &__name {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    font-family: 'Amatic SC', cursive;
+    font-size: calc(10px + 2vw);
+  }
 }
 
-.name {
-  position: absolute;
-  bottom: 2%;
-  left: 1%;
-  font-family: 'Amatic SC', cursive;
-  font-size: calc(10px + 2vw);
+@media (min-width: 600px) and (orientation: landscape) {
+  .container {
+    &__name {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-height: 800px) and (orientation: landscape) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .container {
+    width: 50%;
+  }
 }
 </style>

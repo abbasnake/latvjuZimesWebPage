@@ -14,4 +14,10 @@ export default {
   font-size: calc(30px + 5vw);
   text-align: center;
 }
+
+@media (min-width: 600px) {
+  .header {
+    font-size: 60px;
+  }
+}
 </style>
