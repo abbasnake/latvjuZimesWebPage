@@ -58,10 +58,10 @@ export default {
       this.$store.dispatch('changeSimbol', e.target.value)
     },
     checkScreenSize () {
-      if (window.innerWidth >= 400) {
-        this.isSmallScreen = false
-      } else {
+      if (window.innerWidth <= 400 || window.innerHeight <= 800) {
         this.isSmallScreen = true
+      } else {
+        this.isSmallScreen = false
       }
     },
     resizeListener () {
@@ -83,7 +83,7 @@ export default {
   }
 }
 
-@media (min-width: 400px) {
+@media (min-width: 400px) and (min-height: 800px) {
   .container {
     grid-template-columns: repeat(11, 1fr);
     justify-items: center;
@@ -91,7 +91,7 @@ export default {
   }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 800px) and (min-height: 800px) {
   .container {
     grid-template-columns: repeat(22, 1fr);
   }

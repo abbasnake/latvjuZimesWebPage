@@ -156,7 +156,7 @@ export default {
   }
 }
 
-@media (min-width: 600px) and (orientation: landscape) {
+@media (min-width: 800px) {
   .container {
     &__name {
       font-size: 30px;

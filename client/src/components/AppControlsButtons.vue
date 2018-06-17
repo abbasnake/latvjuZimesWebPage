@@ -31,10 +31,18 @@ export default {
   components: {
     'app-button': AppButton
   },
+  data () {
+    return {
+      screenWidth: null
+    }
+  },
   computed: {
     isRandomizeColors () {
       return this.$store.getters.isRandomizeColors
     }
+  },
+  mounted () {
+    this.screenWidth = screen.width
   },
   methods: {
     randomizeColors () {
@@ -44,7 +52,7 @@ export default {
       this.$store.dispatch('refresh')
     },
     randomize () {
-      this.$store.dispatch('randomizeSliders')
+      this.$store.dispatch('randomizeSliders', this.screenWidth)
     }
   }
 }

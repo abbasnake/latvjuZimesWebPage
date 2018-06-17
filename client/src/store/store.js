@@ -35,7 +35,7 @@ export default new Vuex.Store({
     isRandomizeColors: state => state.isRandomizeColors,
     strokeWidth: state => state.strokeWidth,
     simbols: state => state.simbols,
-    repetitions: state => state.repetitions === 0 ? 1 : state.repetitions
+    repetitions: state => state.repetitions < 1 ? 1 : state.repetitions
   },
   mutations: {
     changeSimbol: (state, payload) => {
@@ -66,23 +66,32 @@ export default new Vuex.Store({
     changeSlider (context, payload) {
       context.commit('changeSlider', payload)
     },
-    randomizeSliders (context) {
-      sliderRandomizeArray.forEach(async slider => {
-        const newValue = Math.floor(Math.random() * slider.maxValue)
-        let currentValue = parseInt(context.state[slider.name])
-        const difference = newValue - currentValue
-        const increments = 6
-        const addBy = difference / increments
+    randomizeSliders (context, screenSize) {
+      if (screenSize > 1080) {
+        sliderRandomizeArray.forEach(async slider => {
+          const newValue = Math.floor(Math.random() * slider.maxValue)
+          let currentValue = parseInt(context.state[slider.name])
+          const difference = newValue - currentValue
+          const increments = 6
+          const addBy = difference / increments
 
-        for (let i = 0; i < increments; i++) {
-          currentValue += addBy
-          await new Promise(resolve => setTimeout(resolve, 20))
-          await context.commit('changeSlider', {
+          for (let i = 0; i < increments; i++) {
+            currentValue += addBy
+            await new Promise(resolve => setTimeout(resolve, 20))
+            await context.commit('changeSlider', {
+              name: slider.name,
+              value: Math.floor(currentValue)
+            })
+          }
+        })
+      } else {
+        sliderRandomizeArray.forEach(slider => {
+          context.commit('changeSlider', {
             name: slider.name,
-            value: Math.floor(currentValue)
+            value: Math.floor(Math.random() * slider.maxValue)
           })
-        }
-      })
+        })
+      }
     }
   }
 })
