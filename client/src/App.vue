@@ -1,12 +1,23 @@
 <template>
   <div id="app" class="app">
     <router-view class="app__views"/>
+    <app-popup v-if="isPopup" />
   </div>
 </template>
 
 <script>
+import AppPopup from '@/components/AppPopup'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'app-popup': AppPopup
+  },
+  computed: {
+    isPopup () {
+      return this.$store.getters.isPopup
+    }
+  }
 }
 </script>
 
@@ -21,10 +32,8 @@ export default {
 @import './scss/variables';
 
 .app {
-  // border: 5px solid $primary-red;
   height: 100vh;
   &__views {
-    // border: 2px solid $primary-red;
     margin: 0 auto;
     max-width: 860px;
   }

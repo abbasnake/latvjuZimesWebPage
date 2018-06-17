@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import simbols from './simbols'
+import popup from './popup'
 import {
   repeatArray,
   getSimbolKeys,
@@ -22,7 +23,9 @@ export default new Vuex.Store({
     r: 255,
     g: 0,
     b: 0,
-    simbols
+    isPopup: true,
+    simbols,
+    popup
   },
   getters: {
     currentSimbolCoordinates: state => repeatArray(state.simbols[state.currentSimbol].coordinates, state.repetitions),
@@ -35,7 +38,9 @@ export default new Vuex.Store({
     isRandomizeColors: state => state.isRandomizeColors,
     strokeWidth: state => state.strokeWidth,
     simbols: state => state.simbols,
-    repetitions: state => state.repetitions < 1 ? 1 : state.repetitions
+    repetitions: state => state.repetitions < 1 ? 1 : state.repetitions,
+    popup: state => state.popup,
+    isPopup: state => state.isPopup
   },
   mutations: {
     changeSimbol: (state, payload) => {
@@ -51,6 +56,9 @@ export default new Vuex.Store({
     },
     changeSlider (state, {name, value}) {
       state[name] = value
+    },
+    closePopup (state) {
+      state.isPopup = false
     }
   },
   actions: {
@@ -65,6 +73,9 @@ export default new Vuex.Store({
     },
     changeSlider (context, payload) {
       context.commit('changeSlider', payload)
+    },
+    closePopup (context) {
+      context.commit('closePopup')
     },
     randomizeSliders (context, screenSize) {
       if (screenSize >= 1080) {
