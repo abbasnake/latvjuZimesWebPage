@@ -67,7 +67,7 @@ export default new Vuex.Store({
       context.commit('changeSlider', payload)
     },
     randomizeSliders (context, screenSize) {
-      if (screenSize > 1080) {
+      if (screenSize >= 1080) {
         sliderRandomizeArray.forEach(async slider => {
           const newValue = Math.floor(Math.random() * slider.maxValue)
           let currentValue = parseInt(context.state[slider.name])
