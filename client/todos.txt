@@ -11,5 +11,37 @@
 - save settings for later use
 - when right click download, the image background is transparent
 - animate from one setting to next
-- add fractal lvels to simbols (wont work for all of them)
+- add fractal levels to simbols (wont work for all of them)
 - info popup (multi-screen view - start here view, about view, controls view, underlying architecture view)
+
+TODO TREES:
+- popup:
+  1) decide on layout/style
+  2) make layout/style
+  3) make a button to dispatch popup
+
+- rearrange folder structure:
+  1) decide on folder structure/naming conventions/usin index files or not etc
+  2) make the folder structure
+  3) test the folder structure
+
+- make tests (jest?) for logic:
+  1) decide what parts need testing
+  2) make tests
+  3) test tests
+
+- keyboard shortcuts:
+  1) what are the necessary/common shortcuts
+  2) implement the keys
+  3) test keys
+
+- make save settings button:
+  1) how to do it? (localhost or something else)
+  2) implement this feature
+  3) test feature (with jest?)
+
+- add fractal setting tosome/all simbols:
+  1) decide which simbols could benefit from this feature
+  2) decide how to implement this feature (different steps for different simbols)
+  3) implement feature
+  4) test feature

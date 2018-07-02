@@ -3,7 +3,13 @@
     <div class="container">
       <app-header1 />
       <button class="container__button" @click="closePopup">X</button>
-      <p>{{ popup.start.description }}</p>
+      <div>
+        <div>GENERAL</div>
+        <div>CONTROLS</div>
+        <div>TIPS</div>
+        <div>LINKS</div>
+      </div>
+      <!-- <p>{{ popup.start.description }}</p>
       <br />
       <app-header2>CONTROLS</app-header2>
       <p>{{ popup.controls.description }}</p>
@@ -13,6 +19,9 @@
       <br />
       <app-header2 font-size="16px">THE BUTTONS</app-header2>
       <p>{{ popup.controls.buttons.description }}</p>
+      <br />
+      <app-header2 font-size="14px">COLORS</app-header2>
+      <p>{{ popup.controls.buttons.colors.description }}</p> -->
     </div>
   </div>
 </template>
