@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import AppButton from '@/components/AppButton'
+import AppButton from '@/components/button/AppButton'
 
 export default {
   name: 'AppControlsButtons',

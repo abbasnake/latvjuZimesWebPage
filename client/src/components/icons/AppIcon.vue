@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import AppIconLine from '@/components/AppIconLine'
+import AppIconLine from '@/components/icons/AppIconLine'
 
 export default {
   name: 'AppIcon',
@@ -53,7 +53,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/variables';
+@import '../../scss/variables';
 
 .svg {
   border: 1px solid black;

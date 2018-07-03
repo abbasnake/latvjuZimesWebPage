@@ -20,11 +20,6 @@ TODO TREES:
   2) make layout/style
   3) make a button to dispatch popup
 
-- rearrange folder structure:
-  1) decide on folder structure/naming conventions/usin index files or not etc
-  2) make the folder structure
-  3) test the folder structure
-
 - make tests (jest?) for logic:
   1) decide what parts need testing
   2) make tests

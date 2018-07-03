@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import AppControlsSelect from '@/components/AppControlsSelect'
-import AppControlsBgColorSliders from '@/components/AppControlsBgColorSliders'
-import AppControlsColorSliders from '@/components/AppControlsColorSliders'
-import AppControlsOtherSliders from '@/components/AppControlsOtherSliders'
-import AppControlsButtons from '@/components/AppControlsButtons'
+import AppControlsSelect from '@/components/controls/AppControlsSelect'
+import AppControlsBgColorSliders from '@/components/controls/AppControlsBgColorSliders'
+import AppControlsColorSliders from '@/components/controls/AppControlsColorSliders'
+import AppControlsOtherSliders from '@/components/controls/AppControlsOtherSliders'
+import AppControlsButtons from '@/components/controls/AppControlsButtons'
 
 export default {
   name: 'AppControls',

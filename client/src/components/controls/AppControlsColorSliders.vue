@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import AppControlsSlider from '@/components/AppControlsSlider'
+import AppControlsSlider from '@/components/controls/AppControlsSlider'
 
 export default {
   name: 'AppControlsColorSliders',

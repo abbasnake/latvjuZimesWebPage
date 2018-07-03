@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import AppPopupHeader1 from '@/components/AppPopupHeader1'
-import AppPopupHeader2 from '@/components/AppPopupHeader2'
+import AppPopupHeader1 from '@/components/popup/AppPopupHeader1'
+import AppPopupHeader2 from '@/components/popup/AppPopupHeader2'
 
 export default {
   name: 'AppPopup',
@@ -50,7 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/variables';
+@import '../../scss/variables';
 
 .background {
   background-color: rgba(0, 0, 0, 0.7);

@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import AppTitle from '@/components/AppTitle'
-import AppNavbar from '@/components/AppNavbar'
-import AppCanvas from '@/components/AppCanvas'
-import AppControls from '@/components/AppControls'
+import AppTitle from '@/components/title/AppTitle'
+import AppNavbar from '@/components/navbar/AppNavbar'
+import AppCanvas from '@/components/canvas/AppCanvas'
+import AppControls from '@/components/controls/AppControls'
 
 export default {
   name: 'ViewHome',

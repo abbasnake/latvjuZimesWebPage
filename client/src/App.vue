@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import AppPopup from '@/components/AppPopup'
+import AppPopup from '@/components/popup/AppPopup'
 
 export default {
   name: 'App',
