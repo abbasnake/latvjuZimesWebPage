@@ -21,9 +21,10 @@ TODO TREES:
   3) make a button to dispatch popup
 
 - make tests (jest?) for logic:
-  1) decide what parts need testing
-  2) make tests
-  3) test tests
+  1) jest vs karma? jest I guess
+  2) decide what parts need testing
+  3) make tests
+  4) test tests
 
 - keyboard shortcuts:
   1) what are the necessary/common shortcuts
@@ -35,7 +36,7 @@ TODO TREES:
   2) implement this feature
   3) test feature (with jest?)
 
-- add fractal setting tosome/all simbols:
+- add fractal setting to some/all simbols:
   1) decide which simbols could benefit from this feature
   2) decide how to implement this feature (different steps for different simbols)
   3) implement feature
