@@ -6,9 +6,13 @@
       :style="canvasBackgroundColor"
       :height="canvasHeight"
       :width="canvasWidth"
-    >
-    </canvas>
-    <h2 class="container__name" :style="titleColor">{{ currentSimbolName }}</h2>
+    />
+    <h2 class="container__name" :style="dynamicStyle" @click="openSimbolLink">
+      {{ currentSimbolName }}
+    </h2>
+    <div class="container__help" :style="dynamicStyle" @click="openPopup">
+      <h2 class="container__help__text" :style="dynamicStyle">?</h2>
+    </div>
   </div>
 </template>
 
@@ -48,15 +52,17 @@ export default {
         'background-color': `rgb(${r}, ${g}, ${b})`
       }
     },
-    titleColor () {
+    dynamicStyle () {
       let {r, g, b} = this.bgCol
       if (r + g + b > (255 + 255 + 255) / 2) {
         return {
-          color: 'black'
+          color: 'black',
+          borderColor: 'black'
         }
       } else {
         return {
-          color: 'white'
+          color: 'white',
+          borderColor: 'white'
         }
       }
     },
@@ -116,6 +122,12 @@ export default {
     redraw () {
       this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
       this.drawSimbol()
+    },
+    openPopup () {
+      this.$store.dispatch('openPopup')
+    },
+    openSimbolLink () {
+      console.log('open simbol link----------------')
     }
   },
   watch: {
@@ -139,6 +151,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../scss/variables';
+
 .container {
   margin: 0 auto;
   &__canvas {
@@ -153,6 +167,24 @@ export default {
     left: 1%;
     font-family: 'Amatic SC', cursive;
     font-size: calc(10px + 2vw);
+    cursor: pointer;
+  }
+  &__help {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 50%;
+    bottom: 2%;
+    right: 1%;
+    height: 8%;
+    width: 4%;
+    cursor: pointer;
+    &__text {
+      font-family: 'Amatic SC', cursive;
+      font-size: calc(5px + 2vw);
+    }
   }
 }
 
@@ -160,6 +192,11 @@ export default {
   .container {
     &__name {
       font-size: 30px;
+    }
+    &__help {
+      &__text {
+        font-size: 26px;
+      }
     }
   }
 }
