@@ -23,7 +23,7 @@ export default new Vuex.Store({
     r: 255,
     g: 0,
     b: 0,
-    isPopup: true,
+    isPopup: false,
     simbols,
     popup
   },
@@ -31,14 +31,14 @@ export default new Vuex.Store({
     currentSimbolCoordinates: state => repeatArray(state.simbols[state.currentSimbol].coordinates, state.repetitions),
     currentSimbolName: state => state.simbols[state.currentSimbol].name,
     currentSimbolKey: state => state.currentSimbol,
-    scatter: state => state.scatter,
+    scatter: state => (state.scatter < 1 ? 1 : state.scatter),
     simbolKeys: state => getSimbolKeys(state.simbols),
     colors: state => ({r: state.r, g: state.g, b: state.b}),
     bgColors: state => ({r: state.bgR, g: state.bgG, b: state.bgB}),
     isRandomizeColors: state => state.isRandomizeColors,
     strokeWidth: state => state.strokeWidth,
     simbols: state => state.simbols,
-    repetitions: state => state.repetitions < 1 ? 1 : state.repetitions,
+    repetitions: state => (state.repetitions < 1 ? 1 : state.repetitions),
     popup: state => state.popup,
     isPopup: state => state.isPopup
   },
@@ -57,6 +57,9 @@ export default new Vuex.Store({
     changeSlider (state, {name, value}) {
       state[name] = value
     },
+    openPopup (state) {
+      state.isPopup = true
+    },
     closePopup (state) {
       state.isPopup = false
     }
@@ -73,6 +76,9 @@ export default new Vuex.Store({
     },
     changeSlider (context, payload) {
       context.commit('changeSlider', payload)
+    },
+    openPopup (context) {
+      context.commit('openPopup')
     },
     closePopup (context) {
       context.commit('closePopup')
