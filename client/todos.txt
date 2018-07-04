@@ -13,8 +13,23 @@
 - animate from one setting to next
 - add fractal levels to simbols (wont work for all of them)
 - info popup (multi-screen view - start here view, about view, controls view, underlying architecture view)
+- write to library aout linkink to some online archive of simbols and their meanings
+- maybe add simbol meanings as popups right here?
 
 TODO TREES:
+- responsiveness: 
+  1) title text
+  2) canvas itself
+  3) canvas -> simbol name
+  4) canvas -> help icon
+  5) controls -> selector
+  6) controls -> buttons
+  7) controls -> sliders
+
+- write to library:
+  1) write e-mail about online resource for info or meanings (maybe API?)
+  2) if not maybe some good other resources
+
 - popup:
   1) decide on layout/style
   2) make layout/style
