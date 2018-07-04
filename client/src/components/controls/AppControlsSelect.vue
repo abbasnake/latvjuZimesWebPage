@@ -3,12 +3,12 @@
     <template v-if="isSmallScreen">
       <select class="container__select" @change="onChange">
         <option
-        v-for="(key, index) in simbolKeys"
-        :value="key"
-        :key="index"
-        :selected="isCurrentlySelectedSimbol(key)"
+          v-for="(key, index) in simbolKeys"
+          :value="key"
+          :key="index"
+          :selected="isCurrentlySelectedSimbol(key)"
         >
-         {{ simbols[key].name }}
+          {{ simbols[key].name }}
         </option>
       </select>
     </template>
