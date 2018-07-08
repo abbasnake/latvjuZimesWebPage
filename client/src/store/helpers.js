@@ -1,5 +1,6 @@
 const repeatArray = (arr, num) => {
   let newArr = []
+  if (num < 1) { num = 1 }
   for (let i = 0; i < num; i++) {
     newArr = newArr.concat(arr)
   }
