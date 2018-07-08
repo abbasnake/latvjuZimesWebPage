@@ -26,10 +26,6 @@ TODO TREES:
   6) controls -> buttons
   7) controls -> sliders
 
-- write to library:
-  1) write e-mail about online resource for info or meanings (maybe API?)
-  2) if not maybe some good other resources
-
 - popup:
   1) decide on layout/style
   2) make layout/style
