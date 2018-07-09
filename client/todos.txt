@@ -17,6 +17,14 @@
 - maybe add simbol meanings as popups right here?
 
 TODO TREES:
+- change buttons to svg icons:
+  1) randomize colors to black and white or rgb lines
+  2) refresh to refresh arrow
+  3) randomize settings to dice
+  4) save as floppy disc
+  5) load as arrow or album
+  6) help as "?" or "i" or something
+
 - responsiveness:
   0) start with small size, just do that, then move on
   1) title text
