@@ -10,9 +10,6 @@
     <h2 class="container__name" :style="dynamicStyle" @click="openSimbolLink">
       {{ currentSimbolName }}
     </h2>
-    <div class="container__help" :style="dynamicStyle" @click="openPopup">
-      <h2 class="container__help__text" :style="dynamicStyle">?</h2>
-    </div>
   </div>
 </template>
 
@@ -123,9 +120,6 @@ export default {
       this.ctx.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
       this.drawSimbol()
     },
-    openPopup () {
-      this.$store.dispatch('openPopup')
-    },
     openSimbolLink () {
       console.log('open simbol link----------------')
     }
@@ -169,34 +163,12 @@ export default {
     font-size: calc(10px + 2vw);
     cursor: pointer;
   }
-  &__help {
-    position: absolute;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid;
-    border-radius: 50%;
-    bottom: 2%;
-    right: 1%;
-    height: 8%;
-    width: 4%;
-    cursor: pointer;
-    &__text {
-      font-family: 'Amatic SC', cursive;
-      font-size: calc(5px + 2vw);
-    }
-  }
 }
 
 @media (min-width: 800px) {
   .container {
     &__name {
       font-size: 30px;
-    }
-    &__help {
-      &__text {
-        font-size: 26px;
-      }
     }
   }
 }

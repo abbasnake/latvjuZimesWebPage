@@ -26,23 +26,24 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-    border: 2px solid black;
-    border-radius: 20px;
-    transition: all .2s linear;
-    padding: 5px;
-    &:focus {
-        outline: none;
-    }
-    &:hover {
-        background-color: black;
-        color: white;
-    }
-    &:active {
-        border: 5px;
-        transform: translateY(2px);
-    }
-    &__toggle {
-      color: inherit;
-    }
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+  transition: all .2s linear;
+  padding: 5px;
+  &:focus {
+      outline: none;
+  }
+  &:hover {
+      background-color: black;
+      color: white;
+  }
+  &:active {
+      border: 5px;
+      transform: translateY(2px);
+  }
+  &__toggle {
+    color: inherit;
+  }
 }
 </style>

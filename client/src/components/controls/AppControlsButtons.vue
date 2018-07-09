@@ -1,24 +1,48 @@
 <template>
   <div class="container">
     <app-button
+      title="Randomize Colors"
       class="container__colors"
       @clicked="randomizeColors"
       :is-toggle="true"
       :isOn="isRandomizeColors"
     >
-      Randomize Colors
+      RC
     </app-button>
     <app-button
+      title="Refreh Settings"
       class="container__refresh"
       @clicked="refresh"
     >
-      Refresh Settings
+      ReS
     </app-button>
     <app-button
+      title="Randomize Settings"
       class="container__randomize"
       @clicked="randomize"
     >
-      Randomize Settings
+      RaS
+    </app-button>
+    <app-button
+      title="Save Settings"
+      class="container__save"
+      @clicked="saveSettings"
+    >
+      Save
+    </app-button>
+    <app-button
+      title="Load Settings"
+      class="container__load"
+      @clicked="loadSettings"
+    >
+      Load
+    </app-button>
+    <app-button
+      title="Help & Information"
+      class="container__help"
+      @clicked="openPopup"
+    >
+      Help
     </app-button>
   </div>
 </template>
@@ -53,6 +77,15 @@ export default {
     },
     randomize () {
       this.$store.dispatch('randomizeSliders', this.screenWidth)
+    },
+    openPopup () {
+      this.$store.dispatch('openPopup')
+    },
+    saveSettings () {
+      console.log('save settings')
+    },
+    loadSettings () {
+      console.log('load settings')
     }
   }
 }
@@ -62,7 +95,7 @@ export default {
 .container {
   // border: 1px solid grey;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5px;
 }
 </style>
