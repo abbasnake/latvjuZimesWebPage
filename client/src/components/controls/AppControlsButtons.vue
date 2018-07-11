@@ -7,14 +7,14 @@
       :is-toggle="true"
       :isOn="isRandomizeColors"
     >
-      RC
+      <app-custom-icon-colors />
     </app-button>
     <app-button
       title="Refreh Settings"
       class="container__refresh"
       @clicked="refresh"
     >
-      ReS
+      <app-custom-icon-refresh />
     </app-button>
     <app-button
       title="Randomize Settings"
@@ -49,11 +49,15 @@
 
 <script>
 import AppButton from '@/components/button/AppButton'
+import AppCustomIconColors from '@/components/icons/AppCustomIconColors'
+import AppCustomIconRefresh from '@/components/icons/AppCustomIconRefresh'
 
 export default {
   name: 'AppControlsButtons',
   components: {
-    'app-button': AppButton
+    'app-button': AppButton,
+    'app-custom-icon-colors': AppCustomIconColors,
+    'app-custom-icon-refresh': AppCustomIconRefresh
   },
   data () {
     return {

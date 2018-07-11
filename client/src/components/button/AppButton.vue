@@ -2,8 +2,8 @@
   <button class="button" @click="onClick">
       <slot></slot>
       <template v-if="isToggle">
-        <strong class="button__toggle" v-if="isOn">ON</strong>
-        <strong class="button__toggle" v-else>OFF</strong>
+        <!-- <strong class="button__toggle" v-if="isOn">ON</strong> -->
+        <!-- <strong class="button__toggle" v-else>OFF</strong> -->
       </template>
   </button>
 </template>
