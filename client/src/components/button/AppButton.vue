@@ -38,6 +38,10 @@ export default {
       background-color: black;
       color: white;
   }
+  &:hover > svg {
+    fill: white;
+    stroke: white;
+  }
   &:active {
       border: 5px;
       transform: translateY(2px);

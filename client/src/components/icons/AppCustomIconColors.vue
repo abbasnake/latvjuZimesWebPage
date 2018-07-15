@@ -29,7 +29,11 @@ export default {
 <style lang="scss" scoped>
 .svg {
   // border: 1px solid green;
-  width: 100%;
-  height: 50%;
+  width: 20px;
+  height: 20px;
+  &:hover > svg {
+    stroke: white;
+    fill: white;
+  }
 }
 </style>
