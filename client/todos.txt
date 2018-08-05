@@ -15,6 +15,7 @@
 - info popup (multi-screen view - start here view, about view, controls view, underlying architecture view)
 - write to library aout linkink to some online archive of simbols and their meanings
 - maybe add simbol meanings as popups right here?
+- lock in settings tick next to sliders so that randomizer doesn't change those
 
 TODO TREES:
 - change buttons to svg icons:
